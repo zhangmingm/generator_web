@@ -1,0 +1,55 @@
+#Mon May 27 16:56:53 GMT+08:00 2019
+entityInstanceName=activitySpree
+moduleName=activitySpree
+passWord=123456
+parentPackage=cn.sstech.platform.activity
+outputDir=D\:\\proTools\\codeRepository\\xingsha\\activity\\trunk\\project\\src\\main\\java
+schema=sstech_platform_activity
+tableComment=
+author=zhangmingming braveheart1115@163.com
+mysqlUrl=jdbc\:mysql\://192.168.80.217\:3306/sstech_platform_activity
+entityName=ActivitySpree
+userName=root
+tableName=activity_spree
+idAutoIncrement=true
+autoGetter=false
+
+
+
+
+
+
+
+
+
+
+
+   /**
+     * 输出properties的key和value
+     */
+    public static void printProp(Properties properties) {
+        System.out.println("---------（方式一）------------");
+        for (String key : properties.stringPropertyNames()) {
+            System.out.println(key + "=" + properties.getProperty(key));
+        }
+
+        System.out.println("---------（方式二）------------");
+        Set<Object> keys = properties.keySet();//返回属性key的集合
+        for (Object key : keys) {
+            System.out.println(key.toString() + "=" + properties.get(key));
+        }
+
+        System.out.println("---------（方式三）------------");
+        Set<Map.Entry<Object, Object>> entrySet = properties.entrySet();//返回的属性键值对实体
+        for (Map.Entry<Object, Object> entry : entrySet) {
+            System.out.println(entry.getKey() + "=" + entry.getValue());
+        }
+
+        System.out.println("---------（方式四）------------");
+        Enumeration<?> e = properties.propertyNames();
+        while (e.hasMoreElements()) {
+            String key = (String) e.nextElement();
+            String value = properties.getProperty(key);
+            System.out.println(key + "=" + value);
+        }
+    }
